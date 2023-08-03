@@ -1,0 +1,146 @@
+@import url('../nullstyle.css');
+
+:root {
+  --title-color: #fff;
+  --gradient: linear-gradient(215deg, #FF6432, #FFA228);
+}
+
+
+body {
+  background: #1E0D00;
+  padding: 50px 20px;
+  font-family: Roboto, sans-serif;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+}
+
+.about h2 {
+  margin-bottom: 14px;
+  color: var(--title-color);
+  font-size: 69.17px;
+  font-weight: 800;
+  line-height: 109.5%;
+}
+
+.about p {
+  margin-bottom: 20px;
+  max-width: 450px;
+  color: #A3A3A3;
+  font-size: 19.562px;
+}
+
+.about .content img {
+  max-width: 35vw;
+  margin-bottom: 20px;
+}
+
+.about .picture {
+  height: 65vw;
+  position: relative;
+}
+
+.about .picture img:first-child {
+  margin-top: 71px;
+  max-width: 30vw;
+}
+
+.about .picture::before {
+  content: '';
+  position: absolute;
+  top: -2%;
+  right: -9%;
+  width: 30%;
+  height: 22%;
+  background: url('../img/icons/hero-main.png') no-repeat center;
+  display: block;
+  background-size: cover;
+}
+
+.about .picture::after {
+  content: '';
+  position: absolute;
+  bottom: 37%;
+  left: -11%;
+  width: 30%;
+  height: 26%;
+  background: url('../img/icons/fries.svg') no-repeat center;
+  display: inline-block;
+  background-size: cover;
+}
+
+
+@media (max-width: 1130px) {
+  .about {
+    gap: 150px;
+  }
+
+  .about .picture::before {
+    top: 2%;
+  }
+
+  .about .picture::after {
+    bottom: 33%;
+  }
+}
+
+@media (max-width: 900px) {
+  .about {
+    gap: 100px;
+  }
+
+  .about h2 {
+    font-size: 42px;
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+
+  .about .picture img:first-child {
+    margin-top: 20px;
+    max-width: 40vw;
+  }
+
+  .about .picture::before {
+    top: -6%;
+  }
+
+  .about .picture::after {
+    bottom: 25%;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .about{
+    gap: 0;
+    margin: 0 auto;
+    flex-direction: column-reverse;
+  }
+
+  .about .content{
+    margin: 0 auto;
+  }
+
+  .about h2{
+    text-align: center;
+  }
+
+  .about p {
+    margin: 0;
+    text-align: center;
+  }
+
+  .about img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .about .picture{
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PizzaShop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main id="content-container"></main>
+
+  <script>
+    async function buildPage(url) {
+      try {
+        const response = await fetch(url)
+
+        const data = await response.text()
+
+        const regex = /<(section|footer|header)\b[^>]*>([\s\S]*?)<\/(section|footer|header)>/i
+        const match = data.match(regex)
+
+        const mainContent = match[0]
+
+        document.getElementById('content-container').innerHTML += mainContent
+      } catch (error) {
+        console.error('Error fetching content: ', error)
+      }
+    }
+
+    async function loadPagesInOrder() {
+      try {
+        await buildPage('./hero/hero.html')
+        await buildPage('./menu/menu.html')
+        await buildPage('./events/events.html')
+        await buildPage('./about/about.html')
+        await buildPage('./footer/footer.html')
+      } catch (error) {
+        console.error('Error loading pages: ', error);
+      }
+    }
+
+    loadPagesInOrder()
+  </script>
+</body>
+
+</html>

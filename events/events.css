@@ -1,0 +1,257 @@
+@import url('../nullstyle.css');
+
+:root {
+  --title-color: #fff;
+  --gradient: linear-gradient(215deg, #FF6432, #FFA228);
+}
+
+
+body {
+  background: #1E0D00;
+  padding: 50px 20px;
+  font-family: Roboto, sans-serif;
+}
+
+.events {
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.events-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 30px;
+  padding: 80px 0px 40px 25px;
+  width: 367px;
+  height: 260px;
+}
+
+.event h2 {
+  color: var(--title-color);
+  font-size: 25.093px;
+  font-weight: 500;
+  line-height: 108.5%;
+}
+
+.event button {
+  border-radius: 999px;
+  background: var(--gradient);
+  padding: 10px 80px;
+}
+
+.event button span {
+  color: var(--title-color);
+  font-size: 15.385px;
+  font-weight: 500;
+  line-height: 108.5%;
+}
+
+.events-row:nth-of-type(1) .event:nth-of-type(1) {
+  background: url('../img/events/event-img-1.png')no-repeat;
+}
+
+.events-row:nth-of-type(1) .event:nth-of-type(2) {
+  background: url('../img/events/event-img-2.png')no-repeat;
+}
+
+.events-row:nth-of-type(1) .event:nth-of-type(3) h2 {
+  align-self: flex-end;
+}
+
+.events-row:nth-of-type(1) .event:nth-of-type(3) p {
+  text-align: right;
+  color: #A3A3A3;
+  font-size: 19.562px;
+}
+
+.events-row:nth-of-type(2) .event:nth-of-type(1) {
+  width: 540px;
+  position: relative;
+  border-radius: 30px;
+  background: url('../img/events/event-img-3.png')no-repeat;
+}
+
+.events-row:nth-of-type(2) .event:nth-of-type(2) {
+  width: 615px;
+  position: relative;
+  background: url('../img/events/event-img-4.png')no-repeat;
+}
+
+.events-row:nth-of-type(2) .event:nth-of-type(1)::after {
+  content: '';
+  position: absolute;
+  display: block;
+  z-index: 2;
+  left: -10%;
+  top: -35%;
+  width: 218px;
+  height: 218px;
+
+  background: url('../img/events/junk-food-1.svg') no-repeat;
+  background-size: contain;
+}
+
+.events-row:nth-of-type(2) .event:nth-of-type(2)::after {
+  content: '';
+  position: absolute;
+  display: block;
+  z-index: 2;
+  right: -16%;
+  top: 0;
+  width: 250px;
+  height: 270px;
+
+  background: url('../img/events/junk-food-2.svg') no-repeat;
+  background-size: contain;
+}
+
+
+.events-row:nth-of-type(3) .event:nth-of-type(1) {
+  background: url('../img/events/event-img-5.png')no-repeat;
+  position: relative;
+}
+
+.events-row:nth-of-type(3) .event:nth-of-type(1)::after {
+  content: '';
+  position: absolute;
+  display: block;
+  z-index: 2;
+  right: 65%;
+  top: 45%;
+  width: 200px;
+  height: 200px;
+
+  background: url('../img/events/junk-food-3.svg') no-repeat;
+  background-size: contain;
+}
+
+.events-row:nth-of-type(3) .event:nth-of-type(2) {
+  background: url('../img/events/event-img-6.png') no-repeat;
+}
+
+.events-row:nth-of-type(3) .event:nth-of-type(3) {
+  background: url('../img/events/event-img-7.png') no-repeat;
+}
+
+@media (max-width: 1200px) {
+  .event {
+    border-radius: 30px;
+    padding: 40px 0px 20px 15px;
+    width: 300px;
+    height: 200px;
+  }
+
+  .event h2 {
+    font-size: 20px;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(1)::after {
+    width: 160px;
+    height: 145px;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(2)::after {
+    width: 215px;
+    height: 220px;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(1) {
+    width: 440px;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(2) {
+    width: 500px;
+  }
+
+  .events-row:nth-of-type(3) .event:nth-of-type(1)::after {
+    width: 160px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 900px) {
+  .event {
+    width: 250px;
+    height: 200px;
+  }
+
+  .event h2 {
+    font-size: 20px;
+  }
+
+  .event button {
+    padding: 10px 40px;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(2)::after {
+    width: 190px;
+    height: 190px;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(1) {
+    width: 440px;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(2) {
+    width: 500px;
+  }
+
+
+  .events-row:nth-of-type(3) .event:nth-of-type(1)::after {
+    right: 64%;
+    top: 56%;
+    width: 130px;
+    height: 115px;
+  }
+}
+
+@media (max-width: 650px) {
+  .events-row {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(1) {
+    width: 300px;
+  }
+
+  .event {
+    width: 300px;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(2)::after {
+    width: 150px;
+    height: 175px;
+  }
+
+  .events-row:nth-of-type(1) .event:nth-of-type(3) h2 {
+    align-self: center;
+  }
+
+  .events-row:nth-of-type(1) .event:nth-of-type(3) p {
+    text-align: center;
+  }
+
+  .events-row:nth-of-type(2) .event:nth-of-type(2) {
+    width: 300px;
+  }
+
+  h2 {
+    align-self: center;
+  }
+
+  .event button {
+    align-self: center;
+  }
+}
