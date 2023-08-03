@@ -3,3 +3,7 @@
 @import url('./events/events.css');
 @import url('./about/about.css');
 @import url('./footer/footer.css');
+
+html {
+  scroll-behavior: smooth;
+}
